@@ -7,5 +7,9 @@ public class Application {
         var mongoService = new MongoService();
 
         mongoService.listAllDatabaseNames().forEach(System.out::println);
+
+        mongoService.listAllDatabaseNames().forEach(database ->
+                mongoService.listAllCollectionNames(database).forEach(System.out::println)
+        );
     }
 }
