@@ -1,7 +1,11 @@
 package me.personal;
 
+import me.personal.service.MongoService;
+
 public class Application {
     public static void main(String[] args) {
-        System.out.println("Here");
+        var mongoService = new MongoService();
+
+        mongoService.listAllDatabaseNames().forEach(System.out::println);
     }
 }
